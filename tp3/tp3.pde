@@ -1,8 +1,6 @@
+//https://youtu.be/TgIw19Xkq4s
+
 PImage arte;
-//Yamila Abigail Fernandez 119024/1
-//Disculpe profe no llegue a hacer el video porque estuve todo el dia con la luz cortada.
-
-
 float tamaño;
 float modulo;
 
@@ -12,6 +10,7 @@ void setup() {
 }
 
 void draw () {
+
   image (arte, 0, 0, 400, 400);
   tamaño = 40;
   modulo = 40;
@@ -20,8 +19,8 @@ void draw () {
     for (int y=0; y<400; y++) {
        cuadrado(x, y, tamaño);
        
-      if(estoysobreObra()){
-          float d = dist(mouseX,mouseY,x*modulo+400,y*modulo+10);//calcula la distancia entre el mouse y el modulo
+      if(estoysobreObra(mouseX,width/2)){
+          float d = dist(mouseX,mouseY,x*modulo+400,y*modulo+10);
           float mov = map(d,0,565,modulo/2,modulo*2);
           circulo (x, y, mov);
         }else{
